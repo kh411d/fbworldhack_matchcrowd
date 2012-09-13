@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
       xmlns:fb="https://www.facebook.com/2008/fbml"> 
-<head prefix="og: http://ogp.me/ns# matchcrowd: 
+<head prefix="og: http://ogp.me/ns# matchcrowd:tournament 
                   http://ogp.me/ns/apps/matchcrowd#">
 	<meta charset="utf-8">
 	<title>Match Crowd</title>
@@ -11,7 +11,7 @@
 
   <meta property="fb:app_id" content="<?php echo $this->config->item('facebook_application_id');?>" /> 
   <meta property="og:type" content="matchcrowd:tournament" /> 
-  <meta property="og:title" content="Create Tournament" /> 
+  <meta property="og:title" content="<?php echo $tour_id;?> Tournament" /> 
   <meta property="og:image" content="<?php echo base_url(); ?>/assets/logo.jpg" /> 
   <meta property="og:description" content="The Turducken of Cookies" /> 
   <meta property="og:url" content="<?php echo current_url(); ?>" />
@@ -22,6 +22,8 @@
 	<h1>Welcome to CodeIgniter!</h1>
 
 	<div id="body">
+		<a href="<?php echo site_url('tournament/push');?>">Create Tournament!!</a><br />
+		
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
 		<p>If you would like to edit this page you'll find it located at:</p>
@@ -32,8 +34,6 @@
 
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
 
 <div id="fb-root"></div>
