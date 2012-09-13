@@ -31,7 +31,7 @@ class Welcome extends CI_Controller {
 
             echo 'aaaaaaaaaaaaaaaaaaaaaa';
         } else {
-            $url = $this->facebook->getLoginUrl(array('cancel_url' => site_url(), 'redirect_uri' => site_url('home/facebookonly/'), 'scope' => $this->config->item('facebook_perms')));
+            $url = $this->facebook->getLoginUrl(array('cancel_url' => site_url(), 'redirect_uri' => site_url(), 'scope' => $this->config->item('facebook_perms')));
             redirect($url);
         }
 	}
