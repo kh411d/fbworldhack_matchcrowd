@@ -1,5 +1,5 @@
 <?php
-	$config['facebook_application_id'] = '331079650318712';
-	$config['facebook_api_key'] = '331079650318712';
-	$config['facebook_secret_key'] = 'b6125527e12add49293c1f5b1d57e2b2';
+	$config['facebook_application_id'] = '152843874856773';
+	$config['facebook_api_key'] = '152843874856773';
+	$config['facebook_secret_key'] = '98b7b6aff325b921b0366fe1d37f1718';
 	$config['facebook_perms'] = 'email,publish_stream,read_stream,publish_actions';
