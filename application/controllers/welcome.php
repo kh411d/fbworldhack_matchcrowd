@@ -29,7 +29,7 @@ class Welcome extends CI_Controller {
 
             $this->session->set_userdata($data);
 
-            echo 'aaaaaaaaaaaaaaaaaaaaaa';
+			$this->load->view('welcome_message');
         } else {
             $url = $this->facebook->getLoginUrl(array('cancel_url' => site_url(), 'redirect_uri' => site_url(), 'scope' => $this->config->item('facebook_perms')));
             redirect($url);
