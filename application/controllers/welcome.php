@@ -12,21 +12,20 @@ class Welcome extends CI_Controller {
         ));
     }
 
-	public function index()
-	{
+	public function index() {
         $data['facebook_uid'] = NULL;
         $data['facebook_token'] = NULL;
 
         $user = $this->facebook->getUser();
-        $data['facebook_uid'] = $user;
-        $data['facebook_token'] = $this->facebook->getAccessToken();
+        if($user) {
+			$data['facebook_uid'] = $user;
+			$data['facebook_token'] = $this->facebook->getAccessToken();
+		}
 
         if ($data['facebook_uid']) {
             $user_profile = $this->facebook->api('/me');
             $data['facebook_name'] = $user_profile['name'];
-
             $this->session->set_userdata($data);
-
             echo 'aaaaaaaaaaaaaaaaaaaaaa';
         } else {
             $url = $this->facebook->getLoginUrl(array('cancel_url' => site_url(), 'redirect_uri' => site_url('home/facebookonly/'), 'scope' => $this->config->item('facebook_perms')));
